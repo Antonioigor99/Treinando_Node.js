@@ -2,6 +2,8 @@ import express from "express";
 import rotas from "./src/routes/index.js";
 const app = express();
 const port = 8000;
+const aquiToTestando = 'Nova branch de teste na qual adicionei'
+console.log(aquiToTestando)
 app.use(express.json());
 app.use(rotas);
 app.listen(port, ()=>{
