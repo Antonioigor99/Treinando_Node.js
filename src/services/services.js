@@ -2,6 +2,7 @@ import fs from "fs";
 const jsonTarefas = JSON.parse(fs.readFileSync('tarefas.json'));
 
 export function getTodasTarefas(){
+    jsonTarefas.sort((tarefaA,tarefaB)=> tarefaB.id - tarefaA.id);
     return jsonTarefas;
 }
 
@@ -42,4 +43,10 @@ export function deleteTarefa(id){
     }else{
         return false
     }
+}
+
+export function TarefasConcluidas(){
+    const jsonConcluido = jsonTarefas.filter(tarefa => tarefa.concluido === true);
+    jsonConcluido.sort((tarefaA, tarefaB) => tarefaB.id - tarefaA.id);
+    return jsonConcluido
 }

@@ -1,4 +1,4 @@
-import { getTodasTarefas, getTarefa, postTarefa, pathTarefa, deleteTarefa} from "../services/services.js";
+import { getTodasTarefas, getTarefa, postTarefa, pathTarefa, deleteTarefa, TarefasConcluidas} from "../services/services.js";
 export function pegaTodasTarefas(req, res) {
     try {
         const todasTarefas = getTodasTarefas();
@@ -64,4 +64,12 @@ export function deletarTarefa(req, res) {
         res.status(500).send(error.message)
     }
 
+}
+
+export function pegaTarefasConcluidas(req,res){
+    try{
+        res.send(TarefasConcluidas());
+    }catch(error){
+        res.status(500).send(error.message);
+    }
 }
