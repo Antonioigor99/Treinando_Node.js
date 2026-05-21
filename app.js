@@ -2,6 +2,8 @@ import express from "express";
 import rotas from "./src/routes/index.js";
 const app = (express());
 const port = 8000;
+const art = 600;
+console.log(art)
 app.use(express.json());
 app.use(rotas);
 app.listen(port, ()=>{
